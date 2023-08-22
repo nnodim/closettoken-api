@@ -1,14 +1,14 @@
 require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
-const { corsOptions } = require('./config/corsOptions');
+const { corsOptions } = require('../config/corsOptions');
 const path = require('path');
-const { logger } = require('./middleware/logger');
-const errorHandler = require('./middleware/errorHandler');
-const { credentials } = require('./middleware/credentials');
+const { logger } = require('../middleware/logger');
+const errorHandler = require('../middleware/errorHandler');
+const { credentials } = require('../middleware/credentials');
 const cookieParser = require('cookie-parser')
 const mongoose = require('mongoose');
-const connectDB = require('./config/dbConnect');
+const connectDB = require('../config/dbConnect');
 const PORT = process.env.PORT || 3500;
 const app = express();
 
@@ -25,11 +25,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
-app.use('/', require('./routes/root'));
-app.use('/subscribe', require('./routes/subscribe'));
-app.use('/auth', require('./routes/auth'));
-app.use('/refresh', require('./routes/refresh'));
-app.use('/logout', require('./routes/logout'));
+app.use('/', require('../routes/root'));
+app.use('/subscribe', require('../routes/subscribe'));
+app.use('/auth', require('../routes/auth'));
+app.use('/refresh', require('../routes/refresh'));
+app.use('/logout', require('../routes/logout'));
 
 app.all('*', (req, res) => {
     res.status(404);

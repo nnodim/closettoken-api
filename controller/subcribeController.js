@@ -27,7 +27,7 @@ const subscribe = async (req, res) => {
 
         // Generate a random position
         // const position = Math.floor(Math.random() * 20001);
-        const position = users.length + 1;
+        const position = users.length + 15122;
 
         // Prepare data for Mailchimp API request
         const fetchData = {

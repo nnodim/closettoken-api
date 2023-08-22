@@ -662,3 +662,4 @@
 20230820	15:18:14	c1fb960e-45e2-4332-a58f-e7917e95033c	GET	http://localhost:3000	/refresh
 20230820	15:18:27	f662f5b3-240a-4d21-8553-f5057b583ae2	OPTIONS	http://localhost:3000	/auth
 20230820	15:18:27	5f3c27c3-4ccc-4360-b77e-aff99757f86b	POST	http://localhost:3000	/auth
+20230822	08:51:19	78f2a0ff-d9ac-4a6e-8de4-2477cc34aa0e	POST	undefined	/auth

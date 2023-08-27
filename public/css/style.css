@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes slide {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 600vw;
+    }
+}
+
+.rainbow-text {
+    background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, rgb(0, 255, 0) 14.28%, rgb(0, 255, 255) 21.42%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+    background-size: 600vw 600vw;
+    -webkit-animation: slide 3s infinite linear forwards;
+    animation: slide 3s infinite linear forwards;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 4.6em;
+    cursor: pointer;
+}
+
+/* Add animation on hover. */
+.rainbow-text:hover {
+    animation: rainbow-text-animation-rev 5s infinite ease forwards;
+}
+
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes rainbow-text-animation {
+    0% {
+        background-size: 57%;
+        background-position: 0 0;
+    }
+
+    20% {
+        background-size: 57%;
+        background-position: 0 1em;
+    }
+
+    100% {
+        background-size: 300%;
+        background-position: -9em 1em;
+    }
+}
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-animation-rev {
+    0% {
+        background-size: 300%;
+        background-position: -9em 1em;
+    }
+
+    20% {
+        background-size: 57%;
+        background-position: 0 1em;
+    }
+
+    100% {
+        background-size: 57%;
+        background-position: 0 0;
+    }
+}

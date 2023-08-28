@@ -1,0 +1,4 @@
+20230827	19:58:58	924cec84-0140-4adb-95ff-3bd81820a86a	GET	undefined	/
+20230827	19:58:58	31cbbcc5-07b8-46d2-ae3b-6c3a3a1d3b76	GET	undefined	/css/tailwind.css
+20230827	19:58:58	2f0c21fc-ed32-4088-8a5f-94486de799ca	GET	undefined	/img/zxc-01.PNG
+20230827	19:58:59	1d97ecdb-51e8-4805-9c3d-88cc359ed48c	GET	undefined	/img/favicon_io/favicon.ico

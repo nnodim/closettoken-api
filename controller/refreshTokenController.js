@@ -26,7 +26,7 @@ const handleRefreshToken = async (req, res) => {
         expiresIn: '1h',
       });
   
-      res.json({ accessToken, position: user.position });
+      res.json({ accessToken, position: user.position, email: user.email });
     } catch (err) {
       return res.sendStatus(403);
     }

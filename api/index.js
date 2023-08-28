@@ -3,12 +3,11 @@ const express = require('express');
 const cors = require('cors');
 const { corsOptions } = require('../config/corsOptions');
 const path = require('path');
-const { logger } = require('../middleware/logger');
-const errorHandler = require('../middleware/errorHandler');
 const { credentials } = require('../middleware/credentials');
 const cookieParser = require('cookie-parser')
 const mongoose = require('mongoose');
 const connectDB = require('../config/dbConnect');
+const morgan = require('morgan');
 const PORT = process.env.PORT || 3500;
 const app = express();
 
@@ -16,7 +15,7 @@ connectDB();
 
 
 //middleware
-app.use(logger);
+app.use(morgan('dev'));
 app.use(credentials);
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
@@ -41,8 +40,6 @@ app.all('*', (req, res) => {
         res.type('txt').send("404 Not Found");
     }
 });
-
-app.use(errorHandler);
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
